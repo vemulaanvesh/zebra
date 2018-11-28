@@ -1,0 +1,21 @@
+---
+ apiVersion: extensions/v1beta1
+ kind: Deployment
+ metadata:
+   name: vue
+ spec:
+   replicas: 2
+   template:
+     metadata:
+       labels:
+         app: web
+     spec:
+       containers:
+         - name: front-end
+           image: anveshvemula/vuepm
+           ports:
+             - containerPort: 80
+         - name: vue
+           image: anveshvemula/vuepm
+           ports:
+             - containerPort: 88
